@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom'
+import PropTypes from 'prop-types';
 
 import Card from './Card';
 import Button from './Button';
@@ -8,6 +9,10 @@ import classes from './ErrorModal.module.css';
 const Backdrop = props => {
   return <div className={classes.backdrop} onClick={props.onConfirm} />
 }
+
+Backdrop.propTypes = {
+  onConfirm: PropTypes.func,
+};
 
 const ModalOverlay = props => {
   return (
@@ -25,6 +30,12 @@ const ModalOverlay = props => {
   )
 }
 
+ModalOverlay.propTypes = {
+  title: PropTypes.any,
+  message: PropTypes.string,
+  onConfirm: PropTypes.func,
+};
+
 const ErrorModal = (props) => {
   return (
     <>
@@ -39,6 +50,12 @@ const ErrorModal = (props) => {
       )}
     </>
   );
+};
+
+ErrorModal.propTypes = {
+  title: PropTypes.any,
+  message: PropTypes.string,
+  onConfirm: PropTypes.func,
 };
 
 export default ErrorModal;

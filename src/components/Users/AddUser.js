@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import Card from '../UI/Card';
 import Button from '../UI/Button';
@@ -75,6 +76,10 @@ const AddUser = (props) => {
       </Card>
     </Wrapper>
   );
+};
+
+AddUser.propTypes = {
+  onAddUser: PropTypes.func,
 };
 
 export default AddUser;
